@@ -21,11 +21,11 @@ public class App
 
                 if(response.equals("N")){
                     turns = 0;
-                    player.addScrore(roll);
+                    player.addScore(roll);
                 }
             }else{
                 System.out.println("Result: " + roll);
-                player.addScrore(roll);
+                player.addScore(roll);
             }
           turns --;
         }

@@ -15,7 +15,7 @@ public class Dice {
     public Integer roll(){
         if(this.lower > this.upper){
             System.out.println("Invalid Dice Values");
-            throw new Error("Invalid Dice Values");
+            throw new IllegalArgumentException("Invalid Dice Values");
         }
         
         Random rand = new Random();
