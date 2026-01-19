@@ -13,7 +13,7 @@ public class Player {
         this.name = name;
     }
 
-    public void addScrore(int points){
+    public void addScore(int points){
         score += points;
     }
 
