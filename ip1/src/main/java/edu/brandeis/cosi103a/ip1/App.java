@@ -56,7 +56,7 @@ public class App
             int gameOver = 0;
             for(Player player : playerList){
                 if(!player.gameOver()){
-                    System.out.println("TURNS: " + player.name + ": " + (player.turns+ 1) + "/" + player.maxTurns);
+                    System.out.println("Turn - " + player.name + ": " + (player.turns+ 1) + "/" + player.maxTurns);
                     turn(player, dice);
                     player.updateTurn();
                 }else{
@@ -79,30 +79,30 @@ public class App
             if(winnerScore.isEmpty()){
                 winnerScore.add(player.score);
                 winners.add(player);
+            }else{
+                if(player.score == winnerScore.get(0) && !winners.contains(player)){
+                    winnerScore.add(player.score);
+                    winners.add(player);
+                } else if(player.score > winnerScore.get(0)){
+                    winnerScore.clear();
+                    winnerScore.add(player.score);
+                    winners.clear();
+                    winners.add(player);
+                } else{
+                    loserScore.add(player.score);
+                    losers.add(player);
+                }
             }
             
-            if(player.score == winnerScore.get(0) && !winners.contains(player)){
-                winnerScore.add(player.score);
-                winners.add(player);
-            } else if(player.score > winnerScore.get(0)){
-                winnerScore.clear();
-                winnerScore.add(player.score);
-                winners.clear();
-                winners.add(player);
-            } else{
-                loserScore.add(player.score);
-                losers.add(player);
-            }
+            
         }
 
-        System.out.println(winners);
-        System.out.println(losers);
-        System.out.println("Winnder(s): ");
+        System.out.println("Winner(s): ");
         for(int i = 0; i < winnerScore.size(); i++){
             System.out.println(winners.get(i).name + "      score: " + winnerScore.get(i));
         }
 
-        System.out.println("Not so winnder(s):  ");
+        System.out.println("Not so winner(s):  ");
         for(int i = 0; i < loserScore.size(); i++){
             System.out.println(losers.get(i).name + "      score: " + loserScore.get(i));
         }
