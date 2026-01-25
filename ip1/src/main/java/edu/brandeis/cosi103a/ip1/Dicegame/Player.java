@@ -1,10 +1,10 @@
-package edu.brandeis.cosi103a.ip1;
+package edu.brandeis.cosi103a.ip1.Dicegame;
 
 public class Player {
-    int score;
-    int turns;
-    int maxTurns;
-    String name;
+    public int score;
+    public int turns;
+    public int maxTurns;
+    public String name;
 
     public Player(int maxTurns, String name) {
         this.maxTurns = maxTurns;
