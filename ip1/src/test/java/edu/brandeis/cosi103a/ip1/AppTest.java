@@ -10,6 +10,10 @@ import java.io.PrintStream;
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
+import edu.brandeis.cosi103a.ip1.Dicegame.Player;
+import edu.brandeis.cosi103a.ip1.Dicegame.App;
+import edu.brandeis.cosi103a.ip1.Dicegame.Dice;
+
 public class AppTest {
 
     @Test
