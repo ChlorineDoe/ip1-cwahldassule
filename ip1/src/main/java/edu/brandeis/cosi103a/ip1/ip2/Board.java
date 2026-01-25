@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Board {
-    private Map<String, List<Card>> stockpiles;
+    public Map<String, List<Card>> stockpiles;
 
     // Constructor - initializes all stockpiles with the specified quantities
     public Board() {
@@ -15,42 +15,42 @@ public class Board {
         // Initialize method cards (x14)
         List<Card> methodCards = new ArrayList<>();
         for (int i = 0; i < 14; i++) {
-            methodCards.add(new Card(2, 1, "method"));
+            methodCards.add(new Card(2, 0, 1, "method"));
         }
         stockpiles.put("method", methodCards);
 
         // Initialize module cards (x8)
         List<Card> moduleCards = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
-            moduleCards.add(new Card(5, 3, "module"));
+            moduleCards.add(new Card(5, 0, 3, "module"));
         }
         stockpiles.put("module", moduleCards);
 
         // Initialize framework cards (x8)
         List<Card> frameworkCards = new ArrayList<>();
         for (int i = 0; i < 8; i++) {
-            frameworkCards.add(new Card(8, 6, "framework"));
+            frameworkCards.add(new Card(8, 0, 6, "framework"));
         }
         stockpiles.put("framework", frameworkCards);
 
         // Initialize bitcoin cards (x60)
         List<Card> bitcoinCards = new ArrayList<>();
         for (int i = 0; i < 60; i++) {
-            bitcoinCards.add(new Card(0, 1, "bitcoin"));
+            bitcoinCards.add(new Card(0, 1, 0, "bitcoin"));
         }
         stockpiles.put("bitcoin", bitcoinCards);
 
         // Initialize ethereum cards (x40)
         List<Card> ethereumCards = new ArrayList<>();
         for (int i = 0; i < 40; i++) {
-            ethereumCards.add(new Card(3, 2, "ethereum"));
+            ethereumCards.add(new Card(3, 2, 0, "ethereum"));
         }
         stockpiles.put("ethereum", ethereumCards);
 
         // Initialize dogecoin cards (x30)
         List<Card> dogecoinCards = new ArrayList<>();
         for (int i = 0; i < 30; i++) {
-            dogecoinCards.add(new Card(6, 3, "dogecoin"));
+            dogecoinCards.add(new Card(6, 3, 0, "dogecoin"));
         }
         stockpiles.put("dogecoin", dogecoinCards);
     }
