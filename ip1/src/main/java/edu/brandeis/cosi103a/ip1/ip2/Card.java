@@ -4,12 +4,14 @@ public class Card {
     private int cost;
     private int value;
     private String type;
+    private int points; //victory points
 
     // Constructor
-    public Card(int cost, int value, String type) {
-        this.cost = cost;
-        this.value = value;
+    public Card(int cost, int value, int points, String type) {
+        this.cost = cost; //money cost
+        this.value = value; //money value
         this.type = type;
+        this.points = points; // Initialize points to 0
     }
 
     // Getters
@@ -25,6 +27,10 @@ public class Card {
         return type;
     }
 
+    public int getPoints() {
+        return points;
+    }
+
     // Setters
     public void setCost(int cost) {
         this.cost = cost;
@@ -38,13 +44,13 @@ public class Card {
         this.type = type;
     }
 
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
     // toString method for easy printing
     @Override
     public String toString() {
-        return "Card{" +
-                "cost=" + cost +
-                ", value=" + value +
-                ", type='" + type + '\'' +
-                '}';
+        return "Card: " + type + "  " + "cost: " + cost + ", value: " + value + ", points: " + points + "\n";
     }
 }

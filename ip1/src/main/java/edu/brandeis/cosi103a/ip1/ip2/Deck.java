@@ -20,14 +20,24 @@ public class Deck {
         this.discardPile = new ArrayList<>();
     }
 
+    public Card drawCard() {
+        if (drawPile.isEmpty()) {
+            System.out.println("Draw pile is empty, reshuffling from discard pile.");
+            reshuffleFromDiscard();
+            
+        }
+        return drawPile.remove(drawPile.size() - 1);
+    }
+
     // Add a card to the draw pile
     public void addToDrawPile(Card card) {
         drawPile.add(card);
     }
 
     // Add a card to the discard pile
-    public void addToDiscard(Card card) {
+    public int addToDiscard(Card card) {
         discardPile.add(card);
+        return card.getPoints();
     }
 
 
@@ -75,10 +85,5 @@ public class Deck {
                 '}';
     }
 
-    public Card drawCard() {
-        if (drawPile.isEmpty()) {
-            return null;
-        }
-        return drawPile.remove(drawPile.size() - 1);
-    }
+    
 }
